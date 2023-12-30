@@ -37,6 +37,8 @@
             </form>
             <small class="d-block text-center mt-3">
                 Not registered? <a href="/register">Register Now!</a>
+                <hr>
+                <a href="{{ route('auth.google') }}">Login dengan google</a>
             </small>
           </main>
     </div>
