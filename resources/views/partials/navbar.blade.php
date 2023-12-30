@@ -1,52 +1,104 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">HowTo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+{{-- <nav class="bg-slate-600 text-white">
+    <div class="">
+      <a class="" href="/">HowTo</a>
+      <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link {{ ($active == "home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
+      <div class="" id="navbarNavAltMarkup">
+            <ul class="">
+                <li class="">
+                    <a class=" {{ ($active == "home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ ($active == "about") ? 'active' : '' }}" href="/about">About</a>
+                <li class="">
+                    <a class=" {{ ($active == "about") ? 'active' : '' }}" href="/about">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ ($active == "posts") ? 'active' : '' }}" href="/posts">Blog</a>
+                <li class="">
+                    <a class=" {{ ($active == "posts") ? 'active' : '' }}" href="/posts">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ ($active == "categories") ? 'active' : '' }}" href="/categories">Categories</a>
+                <li class="">
+                    <a class=" {{ ($active == "categories") ? 'active' : '' }}" href="/categories">Categories</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link {{ ($active == "digimon") ? 'active' : '' }}" href="/digimon">Digimon Index</a>
+                <li class="">
+                  <a class=" {{ ($active == "digimon") ? 'active' : '' }}" href="/digimon">Digimon Index</a>
               </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            <ul class="">
             @auth
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="">
+                <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Welcome back, {{ auth()->user()->name }}
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
-                  <li><hr class="dropdown-divider"></li>
+                <ul class="">
+                  <li><a class="" href="/dashboard"><i class=""></i> My Dashboard</a></li>
+                  <li><hr class=""></li>
                   <li>
                     <form action="/logout" method="post">
                         @csrf
-                        <button type="submit" class="dropdown-item">
-                            <i class="bi bi-box-arrow-right"></i> Logout
+                        <button type="submit" class="">
+                            <i class=""></i> Logout
                         </button>
                     </form>
                 </li>
                 </ul>
               </li>
             @else
-                <li class="nav-item">
-                    <a href="/login" class="nav-link {{ ($active == "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                <li class="">
+                    <a href="/login" class="p-1 bg-sky-500 rounded font-semibold hover:bg-sky-700 active:bg-sky-900 focus:ring focus:ring-sky-300 {{ ($active == "login") ? 'active' : '' }}"><i class=""></i> Login</a>
                 </li>
             @endauth
         </ul>
       </div>
     </div>
+  </nav> --}}
+
+  <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5">
+        HowTo
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:gap-x-12">
+      <a href="/" class="{{ ($active == "home") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">Home</a>
+      <a href="/about" class="{{ ($active == "about") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">About</a>
+      <a href="/posts" class="{{ ($active == "posts") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">Guide</a>
+      <a href="/categories" class="{{ ($active == "categories") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">Categories</a>
+      <a href="/digimon" class="{{ ($active == "digimon") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">Digimon Index</a>
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      @auth
+        <li class="">
+          <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back, {{ auth()->user()->name }}
+          </a>
+          <ul class="">
+            <li><a class="" href="/dashboard"><i class=""></i> My Dashboard</a></li>
+            <li><hr class=""></li>
+            <li>
+              <form action="/logout" method="post">
+              @csrf
+                <button type="submit" class="">
+                  <i class=""></i> Logout
+                </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      @else
+        <li class="">
+          <a href="/login" class="{{ ($active == "login") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          {{-- <a href="/login" class="{{ ($active == "login") ? 'active' : '' }} text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a> --}}
+          {{-- <a href="/login" class="p-1 bg-sky-500 rounded font-semibold hover:bg-sky-700 active:bg-sky-900 focus:ring focus:ring-sky-300 {{ ($active == "login") ? 'active' : '' }}"><i class=""></i> Login</a> --}}
+        </li>
+      @endauth
+      
+    </div>
   </nav>
+  
