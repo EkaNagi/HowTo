@@ -13,14 +13,14 @@
 
 <div class="container px-80 mt-5">
   <a href="/dashboard/posts/create">
-  <button type="" class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Create New Guide</button>
+  <button type="" class="text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Create New Guide</button>
   </a>
 </div>
 
 <div class="container px-80 mt-5">
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-indigo-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-teal-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     #
@@ -52,16 +52,16 @@
                   {{ $post->category->name }}
                 </td>
                 <td class="px-6 py-4">
-                  <a href="/dashboard/posts/{{ $post->slug }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Show</a>
+                  <a href="/dashboard/posts/{{ $post->slug }}" class="font-medium text-green-600 dark:text-green-500 hover:underline">Show</a>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="font-medium text-yellow-600 dark:text-yellow-500 hover:underline">Edit</a>
                 </td>
                 <td class="px-6 py-4">
                   <form action="/dashboard/posts/{{ $post->slug }}" method="post">
                     @method('delete')
                     @csrf
-                    <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="return confirm('Are you sure?')">Hapus</button>
+                    <button class="font-medium text-red-600 dark:text-red-500 hover:underline" onclick="return confirm('Are you sure?')">Hapus</button>
                   </form>
               </td>
             </tr>
@@ -70,40 +70,4 @@
     </table>
   </div>
 </div>
-
-
-
-
-{{-- <div class="table-responsive col-lg-8">
-    <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new post</a>
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Category</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($posts as $post)
-        <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $post->title }}</td>
-            <td>{{ $post->category->name }}</td>
-            <td>
-                <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info">Lihat</a>
-                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning">Edit</a>
-                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
-                @method('delete')
-                @csrf
-                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">Hapus</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-        
-      </tbody>
-    </table>
-  </div> --}}
 @endsection

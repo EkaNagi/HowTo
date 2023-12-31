@@ -1,57 +1,4 @@
-{{-- <nav class="bg-slate-600 text-white">
-    <div class="">
-      <a class="" href="/">HowTo</a>
-      <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class=""></span>
-      </button>
-      <div class="" id="navbarNavAltMarkup">
-            <ul class="">
-                <li class="">
-                    <a class=" {{ ($active == "home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="">
-                    <a class=" {{ ($active == "about") ? 'active' : '' }}" href="/about">About</a>
-                </li>
-                <li class="">
-                    <a class=" {{ ($active == "posts") ? 'active' : '' }}" href="/posts">Blog</a>
-                </li>
-                <li class="">
-                    <a class=" {{ ($active == "categories") ? 'active' : '' }}" href="/categories">Categories</a>
-                </li>
-                <li class="">
-                  <a class=" {{ ($active == "digimon") ? 'active' : '' }}" href="/digimon">Digimon Index</a>
-              </li>
-            </ul>
-            <ul class="">
-            @auth
-            <li class="">
-                <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Welcome back, {{ auth()->user()->name }}
-                </a>
-                <ul class="">
-                  <li><a class="" href="/dashboard"><i class=""></i> My Dashboard</a></li>
-                  <li><hr class=""></li>
-                  <li>
-                    <form action="/logout" method="post">
-                        @csrf
-                        <button type="submit" class="">
-                            <i class=""></i> Logout
-                        </button>
-                    </form>
-                </li>
-                </ul>
-              </li>
-            @else
-                <li class="">
-                    <a href="/login" class="p-1 bg-sky-500 rounded font-semibold hover:bg-sky-700 active:bg-sky-900 focus:ring focus:ring-sky-300 {{ ($active == "login") ? 'active' : '' }}"><i class=""></i> Login</a>
-                </li>
-            @endauth
-        </ul>
-      </div>
-    </div>
-  </nav> --}}
-
-  <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1.5 p-1.5">
         HowTo
@@ -94,8 +41,6 @@
       @else
         <li class="">
           <a href="/login" class="{{ ($active == "login") ? 'active' : '' }} text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-          {{-- <a href="/login" class="{{ ($active == "login") ? 'active' : '' }} text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a> --}}
-          {{-- <a href="/login" class="p-1 bg-sky-500 rounded font-semibold hover:bg-sky-700 active:bg-sky-900 focus:ring focus:ring-sky-300 {{ ($active == "login") ? 'active' : '' }}"><i class=""></i> Login</a> --}}
         </li>
       @endauth
       

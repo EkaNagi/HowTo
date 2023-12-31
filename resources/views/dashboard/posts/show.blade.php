@@ -21,19 +21,19 @@
         <div class="lg:pr-4">
           <div class="lg:max-w-lg">
             <div class="mb-2">
-                <a href="/dashboard/posts" class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm p-3 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Guide List</a>
-                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm p-3 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Edit</a>
+                <a href="/dashboard/posts" class="text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm p-3 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Guide List</a>
+                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="text-white bg-yellow-600 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm p-3 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">Edit</a>
                 <div class="inline-block">
                     <form action="/dashboard/posts/{{ $post->slug }}" method="post">
                         @method('delete')
                         @csrf
-                        <button class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm p-3 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" onclick="return confirm('Are you sure?')">Hapus</button>
+                        <button class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm p-3 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" onclick="return confirm('Are you sure?')">Hapus</button>
                     </form>
     
                 </div>
 
             </div>
-            <p class="text-base font-semibold leading-7 text-indigo-600">By. <a href="#" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="#">{{ $post->category->name }}</a></p>
+            <p class="text-base font-semibold leading-7 text-black">By. <a href="#" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="#">{{ $post->category->name }}</a></p>
             <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $post->title }}</h1>
           </div>
         </div>
@@ -51,7 +51,7 @@
             {!! $post->body !!}
           </div>
           <hr class="mb-5 mt-5">
-          <a href="#" class="text-base font-semibold leading-7 text-indigo-600">Back To Post</a>
+          <a href="#" class="text-base font-semibold leading-7 text-black">Back To Post</a>
         </div>
       </div>
     </div>
