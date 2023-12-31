@@ -2,7 +2,7 @@
 
 @section('container')
 <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl text-center">Digimon Index</h1>
-<p class="mt-2 text-lg leading-8 text-gray-600 text-center mb-3">Digimon Evolve Into?</p>
+<p class="mt-2 text-lg leading-8 text-gray-600 text-center mb-3">Digimon Digivolve to?</p>
     <div class="container mx-auto grid max-w-2xl grid-cols-1 gap-x-2 border-t border-gray-200 pt-2 sm:flex-wrap lg:mx-0 lg:max-w-none lg:grid-cols-4">
         @foreach($data as $dataDigimon)
         <div class="container px-10 py-5">
