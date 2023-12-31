@@ -7,7 +7,19 @@
     <h2 class="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Ayo login!</h2>
   </div>
 
-  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+  <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-sm">
+    @if(session()->has('success'))
+      <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+      {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+      @if(session()->has('loginError'))
+      <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      {{ session('loginError') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
     <form class="space-y-6" action="/login" method="post">
       @csrf
       <div>
