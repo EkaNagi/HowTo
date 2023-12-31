@@ -7,7 +7,7 @@
       <h2 class="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Make a Guide</h2>
     </div>
   
-    <div class="mt-1 sm:mx-auto">
+    <div class="mt-1 sm:mx-96">
       <form class="space-y-6" action="/dashboard/posts" method="post" enctype="multipart/form-data">
         @csrf
         <div>
@@ -78,7 +78,7 @@
         </div>
   
         <div>
-          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create Guide</button>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-5">Create Guide</button>
         </div>
       </form>
     </div>
