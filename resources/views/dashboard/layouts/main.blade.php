@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HowTo | Dashboard</title>
-
+    <link href="/dist/main.css" rel="stylesheet">
     @vite('resources/css/app.css')
 
     
