@@ -7,6 +7,18 @@
     <link href="/dist/main.css" rel="stylesheet">
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     @include('partials.navbar')
